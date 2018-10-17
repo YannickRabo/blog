@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<head>
+    <meta charset="utf-8">
+    <title>Blog - Edit user</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+    <script>tinymce.init({ selector:'textarea' });</script>
+    <link href="https://fonts.googleapis.com/css?family=Overlock" rel="stylesheet"> 
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/styleAdmin.css">
+</head>
+<body>
+	<header>
+        <a href="../index.php" target="_blank">Go to Blog</a>
+        <h1>Welcome to your admin tool</h1>
+        <a href="deconnexion.php" onclick="return logout();">Logout</a>
+    </header>
+    <main class="main">
+        <section>
+            <nav>
+                <a href="admin.php">Home</a>
+                <a href="add.php">New article</a>
+                <a href="users.php">Users</a>
+                <a href="newUser.php">New user</a>
+                <a href="categories.php">Categories</a>
+                <a href="new_category.php">New category</a>
+            </nav>
+        </section>
+        <section>
+            <form action="editUser.php" method="POST" class="modif">
+                <ul>
+                    <input type="hidden" id="idUsers" name="idUsers" value="<?=$users['idUsers']?>">
+                    <li>
+                        <label for="username">Username :</label>
+                        <input type="text" id="username" name="username" value="<?=$users['userName']?>">
+                    </li>
+                    <li>
+                        <label for="password">Password :</label>
+                        <input type="text" id="password" name="password">
+                    </li>
+                    <li>
+                        <label for="nom">First Name :</label>
+                        <input type="text" id="nom" name="nom" value="<?=$users['nom']?>">
+                    </li>
+                    <li>
+                        <label for="prenom">Last Name :</label>
+                        <input type="text" id="prenom" name="prenom" value="<?=$users['prenom']?>">
+                    </li>
+                    <li>
+                        <label for="email">Email :</label>
+                        <input id="email" name="email" rows="5" value="<?=$users['email']?>">
+                    </li>
+                    <li>
+                        <input type="submit" name="submit" value="Save" title="edit">
+                    </li>
+                </ul>
+            </form>
+        </section>
+    </main>
+    <footer>
+        
+    </footer>
+</body>
+</html>

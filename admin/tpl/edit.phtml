@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<head>
+    <meta charset="utf-8">
+    <title>Blog - Edit article</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+    <script>tinymce.init({ selector:'textarea' });</script>
+    <link href="https://fonts.googleapis.com/css?family=Overlock" rel="stylesheet"> 
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/styleAdmin.css">
+</head>
+<body>
+    <header>
+        <a href="../index.php" target="_blank">Go to Blog</a>
+        <h1>Welcome to your admin tool</h1>
+        <a href="deconnexion.php" onclick="return logout();">Logout</a>
+    </header>
+    <main class="main">
+        <section>
+            <nav>
+                <a href="admin.php">Home</a>
+                <a href="add.php">New article</a>
+                <a href="users.php">Users</a>
+                <a href="newUser.php">New user</a>
+                <a href="categories.php">Categories</a>
+                <a href="new_category.php">New category</a>
+            </nav>
+        </section>
+        <section>
+            <h2>Edit article</h2>
+            <form action="edit.php" method="POST" class="modif" enctype="multipart/form-data">
+                <ul>
+                    <input type="hidden" id="idArticles" name="idArticles" value="<?=$article['idArticles']?>">
+                    <li>
+                        <label for="titre">Title :</label>
+                        <input type="text" id="titre" name="titre" value="<?=$article['titre']?>">
+                    </li>
+                    <li>
+                        <label for="titre">Subtitle :</label>
+                        <input type="text" id="subtitle" name="subtitle" value="<?=$article['subtitle']?>">
+                    </li>
+                    <li>
+                        <label for="publication">Publication date :</label>
+                        <input id="publication" name="publication" type="date" value="<?=$article['datePublication']?>">
+                    </li>
+                    <li>
+                        <label for="edition">Edition date :</label>
+                        <input id="edition" name="edition" type="date" value="<?=$article['dateEdition']?>">
+                    </li>
+                    <li>
+                        <label for="contenu">Content :</label>
+                    </li>
+                    <li>
+                        <textarea id="contenu" name="contenu" rows="9"><?=$article['contenu']?></textarea>
+                    </li>
+                    <li>
+                        <label for="clefs">Keywords :</label>
+                        <input id="clefs" name="clefs" rows="5" value="<?=$article['motsClefs']?>">
+                    </li>
+                    <li>
+                        <label for="statut">Status :</label>
+                        <input id="statut" name="statut" type="checkbox" <?= ($article['statut'] == 1 )?'checked':''?> >
+                    </li>
+                    <li>
+                        <label for="imgUne">Images :</label>
+                        <input type=hidden name="images" value="<?=$article['imgUne']?>" >
+                        <input id="imgUne" name="imgUne" type="file">
+                    </li>
+<!--                     <li>
+                        <label for="resume">Resume :</label>
+                    </li>
+                    <li>
+                        <textarea id="resume" name="resume" rows="5"><?=$article['resume']?></textarea>
+                    </li> -->
+                    <li>
+                        <label>Category</label>
+                        <select name="categorie">
+                            <option value="<?= $article['idCategories'] ?>"><?= $article['titreCategorie'] ?></option>
+                        <?php foreach($category as $index=>$categories): ?>
+                            <option value="<?= $categories['idCategories'] ?>"><?= $categories['titre'] ?></option>
+                        <?php endforeach ?>
+                        </select>
+                    </li>
+                    <li>
+                        <input type="submit" name="submit" value="Save" title="edit">
+                        <input type="submit" name="cancel" value="Cancel" title="cancel">
+                    </li>
+                </ul>
+            </form>
+        </section>
+    </main>
+    <footer>
+        
+    </footer>
+</body>
+</html>

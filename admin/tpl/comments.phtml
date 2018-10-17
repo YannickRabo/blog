@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<head>
+    <meta charset="utf-8">
+    <title>Blog - Comments</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+    <script>tinymce.init({ selector:'textarea' });</script>
+    <link href="https://fonts.googleapis.com/css?family=Overlock" rel="stylesheet"> 
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/styleAdmin.css">
+</head>
+<body>
+    <header>
+        <a href="../index.php" target="_blank">Go to Blog</a>
+        <h1>Welcome to your admin tool</h1>
+        <a href="deconnexion.php" onclick="return deleteask();">Logout</a>
+    </header>
+    <main class="main">
+        <section>
+            <nav>
+                <a href="admin.php">Home</a>
+                <a href="add.php">New article</a>
+                <a href="users.php">Users</a>
+                <a href="newUser.php">New user</a>
+                <a href="categories.php">Categories</a>
+                <a href="new_category.php">New category</a>
+           </nav>
+        </section>
+        <section>
+            <h2><span></span> Comments</h2>
+            <table class="standard-table">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Comment</th>
+                        <th class="delete"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach($comments as $comment): ?>
+                        <tr class="comments">
+                            <td class="pseudo"><?= $comment['pseudo'] ?></td>
+                            <td class="texte"><?= $comment['texte'] ?></td>
+                            <td class="icon"><a href="comments.php?idArticles=<?=$_GET['idArticles']?>&delComm=<?=$comment['idCommentaires']?>" class="tddelete" onclick="return deletecomm();"></a></td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </section>
+        </main>
+    <footer>
+
+    </footer>
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>

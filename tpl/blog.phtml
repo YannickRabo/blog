@@ -1,0 +1,52 @@
+	<main>
+        <section class="recent">
+            <p>Latest Articles</p>
+            <?php foreach($recent as $index=>$results): ?>                
+                <article>
+                    <a href="/articles/<?=$results['idArticles']?>/<?=(str_replace(' ', '-', strtolower($results['titre'])))?>">
+                        <figure>
+                            <?php if(empty($results['imgUne'])) { ?>
+                                <img src="admin/uploads/noimage.jpg" alt="no image">
+                            <?php } else { ?>
+                                <img src="admin/uploads/<?= $results['imgUne']; ?>" alt="<?= $results['imgUne']; ?>">
+                            <?php } ?>
+                            <p class="categories"><?= $results['titreCategorie']; ?></p>
+                        </figure>
+                    </a>
+                    <div class="shortContent">
+                        <a href="/articles/<?=$results['idArticles']?>/<?=(str_replace(' ', '-', strtolower($results['titre'])))?>"><h2><?= $results['titre'] ?></h2></a>
+                        <h3><?= $results['subtitle'] ?></h3>
+                        <?= mb_strimwidth($results['contenu'],0,150,'...') ?>
+                        <p class="date"><a href="about/#<?= strtolower($results['userName']) ?>"><?= $results['userName'] ?></a> | <?= $results['datePub'] ?></p>
+                    </div>
+                </article>
+            <?php endforeach ?>           
+        </section>
+        <section class="articles">
+        <?php foreach($result as $index=>$results): ?>
+            <article>
+                <a href="/articles/<?=$results['idArticles']?>/<?=(str_replace(' ', '-', strtolower($results['titre'])))?>">
+                     <figure>
+                        <?php if(empty($results['imgUne'])) { ?>
+                            <img src="admin/uploads/noimage.jpg" alt="no image">
+                        <?php } else { ?>
+                            <img src="admin/uploads/<?= $results['imgUne']; ?>" alt="<?= $results['imgUne']; ?>">
+                        <?php } ?>
+                    </figure>
+                </a>
+                <div>
+                    <p class="cat"><?= $results['titreCategorie']; ?> | </p>
+                    <a href="/articles/<?=$results['idArticles']?>/<?=(str_replace(' ', '-', strtolower($results['titre'])))?>">
+                        <h2><?= $results['titre'] ?></h2>
+                    </a>
+                    <h3><?= $results['subtitle'] ?></h3>
+                    <div class="shortContent">
+                        <?= mb_strimwidth($results['contenu'],0,100,'...') ?>
+                    </div>
+                    <p class="date"><a href="about/#<?= strtolower($results['userName']) ?>"><?= $results['userName'] ?></a> | <?= $results['datePub'] ?></p>
+                    <a href="/articles/<?=$results['idArticles']?>/<?=(str_replace(' ', '-', strtolower($results['titre']))).'/#comments'?>" class="comments"><?= $comments[$index]['totalComm']; ?></a>
+                </div>
+            </article>
+        <?php endforeach ?>
+        </section>
+	</main>

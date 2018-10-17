@@ -1,0 +1,26 @@
+RewriteEngine On
+
+RewriteCond %{HTTPS} off
+
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
+
+# line fore article
+RewriteRule ^articles/([0-9]+)/([a-zA-Z0-9\-]+)$ article.php?idArticles=$1 [QSA,L]
+
+# line fore article, scrolled to comments part
+RewriteRule ^articles/([0-9]+)/([a-zA-Z0-9\-]+)/$ article.php?idArticles=$1 [QSA,L]
+
+RewriteRule ^categories/([0-9]+)/([a-zA-Z\-]+)$ category.php?idCategories=$1 [QSA,L]
+
+RewriteRule ^admin/login$ admin/login.php [L]
+
+RewriteRule ^homepage$ index.php [L]
+
+RewriteRule ^contact$ contact.php [L]
+
+RewriteRule ^about$ about.php [L]
+
+RewriteRule ^search$ search.php [L]
+
+RewriteRule ^privacy-policy$ privacy_policy.php [L]
+

@@ -1,0 +1,37 @@
+    <main class="search">
+        <h1><?= strtolower($search) ?></h1>
+        <?php 
+            if ($count == 0) {
+                echo   "<section class='noresult'>
+                            <span>No results where found for your request.</span>
+                        </section>";
+            } 
+        ?>
+        <?php foreach($result as $index=>$articles): ?>
+            <article>
+                <a href="/articles/<?=$articles['idArticles']?>/<?=(str_replace(' ', '-', strtolower($articles['titre'])))?>">
+                     <figure>
+                        <?php if(empty($articles['imgUne'])) { ?>
+                            <img src="admin/uploads/noimage.jpg" alt="no image">
+                        <?php } else { ?>
+                            <img src="admin/uploads/<?= $articles['imgUne']; ?>" alt="<?= $articles['imgUne']; ?>">
+                        <?php } ?>
+                    </figure>
+                </a>
+                <div>
+                    <p class="cat"><?= $articles['titreCategorie']; ?> | </p>
+                    <a href="/articles/<?=$articles['idArticles']?>/<?=(str_replace(' ', '-', strtolower($articles['titre'])))?>">
+                        <h2><?= $articles['titre'] ?></h2>
+                    </a>
+                    <?php if(empty($articles['subtitle'])) { ?>
+                        
+                    <?php } else { ?>
+                        <h3><?= $articles['subtitle'] ?></h3>
+                    <?php } ?>
+                    <?= mb_strimwidth($articles['contenu'],0,130,'...') ?>
+                    <p class="date"><?= $articles['userName']; ?> | <?= $articles['datePub'] ?></p>
+                    <a href="/articles/<?=$articles['idArticles']?>/<?=(str_replace(' ', '-', strtolower($articles['titre']))).'/#comments'?>" class="comments"><?= $comments[$index]['totalComm']; ?></a>
+                </div>
+            </article>
+        <?php endforeach ?>
+    </main>

@@ -1,0 +1,95 @@
+@font-face {
+    font-family: icomoon;
+    src: url(../font/icomoon.ttf);
+}
+*:before, *:after {
+	font-family: icomoon;
+}
+
+body {
+	font-family: 'Overlock', cursive;
+	font-size: 62.5%;
+	background: url(../img/desk.jpg);
+	background-size: cover;
+}
+form {
+	width: 530px;
+	margin: 30vh auto;
+	background: rgba(192,192,192,.5);
+	padding: 0.5rem;
+	font-size: 1.2rem;
+	display: flex;
+	flex-direction: column;
+	border-radius: 10px;
+}
+h1 {
+	padding: 1rem;
+	display: inline;
+	text-align: center;
+	font-size: 2rem;
+	color: white;
+	background: #479ACA;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	font-style: italic;
+	margin: 0;
+}
+form p:nth-child(2), form p:nth-child(3) {
+	font-size: 1rem;
+	background: #0B0A0A;
+	width: 95%;
+	margin: 1rem auto;
+}
+form p:before {
+	padding: 0 0.8rem;
+	color: white;
+}
+form p:nth-child(2):before {
+	content: '\e971';
+}
+form p:nth-child(3):before {
+	content: '\e98e';
+}
+form p:nth-child(4) {
+	font-size: 0.8rem;
+	margin-top: 0;
+	margin: 0 1rem 1rem;
+}
+form input[type="text"], form input[type="password"] {
+	padding: 0.5rem;
+	border: none;
+	background: none;
+	color: white;
+	background: #2F2A27;
+	width: 86%;
+	margin: 0.7rem 0.7rem 0.7rem 0;
+}
+input::placeholder {
+	color: white;
+}
+form input[type="submit"] {
+	margin: 0 auto;
+	text-align: center;
+	text-transform: uppercase;
+	font-family: 'Overlock', cursive;
+	font-size: 1rem;
+	font-weight: bold;
+	padding: 1rem 2rem;
+	width: 45%;
+	letter-spacing: 5px;
+	background: #3dace1;
+	color: white;
+	border: none;
+	transition: ease 1s;
+}
+form input[type="submit"]:hover {
+	background: #ffcc54;
+	color: black;
+}
+.alert {
+	font-size: 1rem;
+	color: red;
+	text-transform: uppercase;
+	font-weight: bold;
+	text-align: center;
+}

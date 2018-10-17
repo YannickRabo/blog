@@ -1,0 +1,1041 @@
+/****************************************************************/
+/***************************** GLOBAL ***************************/
+/****************************************************************/
+@font-face {
+    font-family: icomoon;
+    src: url(../admin/font/icomoon.ttf);
+}
+::before, ::after {
+	font-family: icomoon;
+}
+a {
+	text-decoration: none;
+	outline: none;
+}
+/****************************************************************/
+/*************************** HTML / BODY ************************/
+/****************************************************************/
+html {
+	min-height: 100%;
+	position: relative;
+}
+body {
+	font-family: 'Pathway Gothic One', sans-serif;
+	background: #eff0f1;
+	font-size: 62.5%;
+	font-size: 1.5rem;
+}
+/****************************************************************/
+/***************************** HEADER ***************************/
+/****************************************************************/
+header {
+	background: #fff;
+}
+header a {
+	color: #000;
+}
+/* The progress container */
+.progress-container {
+	display: none;
+}
+header div {
+	margin: 0;
+}
+header img {
+	max-width: 75px;
+}
+/****************************************************************/
+/***************************** NAV ******************************/
+/****************************************************************/
+header nav {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	padding: 0 1rem;
+	height: 5rem;
+	-webkit-box-shadow: 0 8px 11px #ccc;
+	        box-shadow: 0 8px 11px #ccc;
+}
+header nav section {
+	width: 20%;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+header nav section:nth-child(2) {
+	width: 60%;
+}
+header nav section:nth-child(2) {
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+}
+header nav section:nth-child(2) ul {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+}
+header nav section:last-child {
+	-webkit-box-pack: end;
+	    -ms-flex-pack: end;
+	        justify-content: flex-end;
+}
+header nav input {
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	padding: .3rem;
+	font-size: 2.5rem;
+	font-family: 'Pathway Gothic One', sans-serif;
+	width: 100%;
+}
+nav li {
+	font-variant: small-caps;
+	-webkit-box-flex: 2;
+	    -ms-flex-positive: 2;
+	        flex-grow: 2;
+	text-align: center;
+	-webkit-transition: .2s ease;
+	-o-transition: .2s ease;
+	transition: .2s ease;
+	list-style-type: none;
+	cursor: pointer;
+	font-weight: bold;
+}
+.menu {
+	position: relative;
+}
+.menu > ul {
+	padding: 0;
+}
+.menu > ul > li > a, .menu > ul > li {
+	font-size: 3.5rem;
+	-webkit-transition: .5s;
+	-o-transition: .5s;
+	transition: .5s;
+	padding: 1rem;
+}
+.menu a:hover {
+	color: grey;
+}
+.menu > ul > li > a:after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 50%;
+	height: 2px;
+	background: #009198;;
+	opacity: 0;
+	-webkit-transform: translateY(5px);
+	-ms-transform: translateY(5px);
+	    transform: translateY(5px);
+	-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+	transition: opacity 0.3s, -webkit-transform 0.3s;
+	-o-transition: transform 0.3s, opacity 0.3s;
+	transition: transform 0.3s, opacity 0.3s;
+	transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
+	pointer-events: none;
+	margin: 0 25%;
+}
+.menu > ul > li a:hover:after {
+	opacity: 1;
+	-webkit-transform: translateY(0px);
+	-ms-transform: translateY(0px);
+	    transform: translateY(0px);
+}
+.menu > ul > li:nth-child(2):hover, .menu > ul > li:last-child:hover {
+	-webkit-transform: scale(.9);
+	    -ms-transform: scale(.9);
+	        transform: scale(.9);
+}
+.submenu {
+	position: absolute;
+	visibility: hidden;
+	opacity: 0;
+	-webkit-box-orient: vertical !important;
+	-webkit-box-direction: normal !important;
+	    -ms-flex-direction: column !important;
+	        flex-direction: column !important;
+	background: #fff;
+	text-align: center;
+	top: 5rem;
+	left: -2rem;
+	z-index: 1000;
+	padding: 1rem 2rem;
+	-webkit-box-shadow: 0 8px 11px #ccc;
+	        box-shadow: 0 8px 11px #ccc;
+	-webkit-transition: .5s ease-in-out;
+	-o-transition: .5s ease-in-out;
+	transition: .5s ease-in-out;
+}
+.submenu a {
+	-webkit-transition: .5s ease;
+	-o-transition: .5s ease;
+	transition: .5s ease;
+}
+.menu > ul > li:first-child:hover > .submenu {
+	opacity: 1;
+	visibility: visible;
+}
+/****************************************************************/
+/***************************** MAIN *****************************/
+/****************************************************************/
+
+h2 {
+	font-family: 'Pathway Gothic One', sans-serif;
+	font-size: 3rem;
+	margin: 0;
+}
+main {
+	margin: 0 auto 5rem;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	background: #eff0f1;
+}
+main > article {
+	margin-bottom: 1rem;
+}
+/****************************************************************/
+/**************** HOME PAGE RECENT ARTICLES PART ****************/
+/****************************************************************/
+.recent > p, main > div > p, h1 {
+	text-align: center;
+	font-size: 2rem;
+	position: relative;
+	font-weight: initial;
+}
+.recent > p:after, main > div > p:after, h1:after {
+	content: "";
+	position: absolute;
+	bottom: -.5rem;
+	left: 50%;
+	width: 70px;
+	height: 2px;
+	background: #3dd07d;
+	-webkit-transform: translateX(-50%);
+	    -ms-transform: translateX(-50%);
+	        transform: translateX(-50%);
+}
+.recent article {
+	margin: 2rem;
+	border-radius: 3px;
+	background: #fff;
+}
+.recent article figure {
+	width: 100%;
+	max-height: 30rem;
+	position: relative;
+	border-radius: 3px;
+}
+.recent article figure:hover img {
+	-webkit-transform: none;
+	    -ms-transform: none;
+	        transform: none;
+}
+.recent article figure:hover a {
+	color: #ffcc54;
+}
+.recent article .shortContent {
+	padding: 1rem;
+}
+.recent article .categories {
+	position: absolute;
+	top: -1rem;
+	left: 1rem;
+	padding: 2rem 1.5rem;
+	font-size: 2rem;
+	background: #000;
+	color: #3dd07d;
+	border-top-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+.recent article h2 {
+	width: 100%;
+}
+/****************************************************************/
+/**************** HOME PAGE OLDER ARTICLES PART *****************/
+/****************************************************************/
+.articles article, .search article {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	background: #fff;
+	margin: 2rem;
+	border-radius: 3px;
+	height: 20rem;
+}
+.articles article > a, .search article > a {
+	width: 50%;
+}
+.articles article figure, .search article figure {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	width: 98%;
+	height: 20rem;
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+}
+.articles article figure img, .search article figure img {
+	height: 100%;
+	width: auto;
+	position: absolute;
+	right: 50%;
+	-webkit-transform: translate(50%);
+	    -ms-transform: translate(50%);
+	        transform: translate(50%);
+}
+.articles article > div, .search article > div {
+	width: 50%;
+	margin-left: 1rem;
+	position: relative;
+}
+.articles article div h2, .search article div h2  {
+	margin: 0;
+	padding: 0;
+	line-height: 3rem;
+	font-size: 2rem;
+	display: inline;
+}
+.articles article .categories, .search article .categories {
+	position: absolute;
+	top: -.5rem;
+	left: 1rem;
+	border-top-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	color: black;
+	background: #ffcc54;
+	padding: 1rem 1rem 1rem 2rem;
+	font-size: 1.5rem;
+}
+.articles article .cat, .search article .cat {
+	display: inline-block;
+	color: #3dd07d;
+	margin: 1rem 0 0;
+	text-transform: uppercase;
+	font-size: 2rem;
+	font-weight: bold;
+}
+.articles article .date, .search article .date {
+	position: absolute;
+	bottom: 0;
+	margin: 1.5rem 0;
+}
+.articles article div .comments, .search article div .comments {
+	position: absolute;
+	bottom: 0.5rem;
+	right: 0.5rem;
+}
+h3 {
+	text-transform: uppercase;
+	margin: 0 0 0.5rem;
+	font-size: 1.5rem;
+}
+h4 {
+	font-size: 1.5rem;
+	color: #3dd07d;
+}
+.shortContent p {
+	font-size: 1.5rem;
+}
+.shortContent p:first-child {
+	margin-top: 0;
+}
+article a {
+	text-transform: uppercase;
+	-webkit-transition: 0.5s ease;
+	-o-transition: 0.5s ease;
+	transition: 0.5s ease;
+	color: #3dace1
+}
+article a:hover {
+	color: #ffcc54;
+}
+/****************************************************************/
+/***************** CATEGORY PAGE ARTICLES PART ******************/
+/****************************************************************/
+.category {
+	margin-bottom: 8rem;
+}
+.category article {
+	width: 90%;
+	margin: 2rem auto;
+	display: -ms-grid;
+	display: grid;
+	grid-row-gap: 1rem;
+	background: #fff;
+}
+.category figure {
+	height: 20rem;
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+}
+.category article > div {
+	position: relative;
+	height: 15rem;
+	padding: 0 1rem;
+}
+.category .date {
+	position: absolute;
+	bottom: 0;
+	left: 1rem;
+}
+.category .comments {
+	position: absolute;
+	right: 1rem;
+	bottom: 0;
+	padding: .5rem;
+}
+.comments:before {
+	content: '\e96e';
+	padding-right: 0.5rem;
+}
+.comment input[type="submit"] {
+	display: inline-block;
+	text-align: center;
+	padding: 0.3rem;
+	background: transparent;
+	border: 3px solid #3dace1;
+	color: #3dace1;
+	border-radius: 5px;
+	-webkit-transition: 0.5s;
+	-o-transition: 0.5s;
+	transition: 0.5s;
+	font-variant: small-caps;
+	font-weight: bolder;
+	font-size: 1rem;
+	width: 7rem;
+}
+.comment input[type="submit"]:hover {
+	color: #ffcc54;
+	border: 3px solid #ffcc54;
+}
+figure {
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+article img, .recent img {
+	width: 100%;
+}
+/****************************************************************/
+/********************* CHOSEN ARTICLE PAGE **********************/
+/****************************************************************/
+.article {
+	width: 80%;
+	margin: 5rem auto 8rem;
+}
+.article .return {
+	margin-bottom: 1rem;
+}
+.article article p {
+	padding: 0 10%;
+}
+.content p {
+	font-size: 2rem;
+}
+.date, .categories {
+	color: #A69D9B;
+	font-variant: small-caps;
+	line-height: 0;
+	font-weight: bold;
+	font-size: 1.5rem;
+}
+/****************************************************************/
+/********************** COMMENTS AND FORM ***********************/
+/****************************************************************/
+.comment h3:after {
+	content: '\e96f';
+	padding-left: 0.5rem;
+}
+.comment form {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	margin-bottom: 2rem;
+}
+.comment form label {
+	font-weight: bold;
+}
+.comment form input[name="name"] {
+	border: 2px solid #ccc;
+	padding: 0.3rem;
+	margin: 0.5rem 0;
+}
+.comment input[name="name"], .comment textarea {
+	font-size: 2rem;
+}
+.comment textarea {
+	resize: none;
+	height: 5rem;
+	border: 2px solid #ccc;
+	padding: 0.3rem;
+	margin: 0.5rem 0;
+}
+.comment article {
+	padding: 0.5rem;
+}
+.comment article:nth-child(even) {
+	border: 1px solid #ccc;
+	background: transparent;
+}
+.comment article:nth-child(odd) {
+	background-color: #CCC;
+}
+#comments article p {
+	margin: 0;
+	padding: 0 2rem;
+	font-size: 2rem;
+}
+#comments article p:first-child {
+	padding-bottom: 0.5rem;
+}
+#comments article p:first-child span {
+	font-weight: bold;
+	text-transform: uppercase;
+	padding: 0 2rem 0 0;
+}
+.forminfo {
+	width: 80%;
+	text-align: center;
+	font-size: 2rem;
+	margin: 3rem auto 0;
+	border: none;
+}
+.forminfo p {
+	margin: 0;
+	font-size: 2.5rem;
+}
+/****************************************************************/
+/******************** CONTACT PAGE AND FORM *********************/
+/****************************************************************/
+main > form {
+	width: 80%;
+	margin: 2rem auto 3rem;
+}
+main > form input, main > form textarea {
+	display: block;
+	width: 90%;
+	font-size: 2rem;
+	padding: .5rem;
+	margin: 2rem auto;
+	border: 1px solid #ccc;
+}
+main > form textarea {
+	height: 10rem;
+	resize: none;
+}
+main > form > div {
+	width: 49%;
+	display: inline-block;
+	margin: 0 3rem 0 0;
+	padding: 0 0 0 3rem;
+}
+main > form > div input {
+	width: 3%;
+	display: inline-block;
+	-webkit-transform: scale(2);
+	    -ms-transform: scale(2);
+	        transform: scale(2);
+	margin-right: 1rem;
+}
+div label {
+	font-size: 2rem;
+}
+main > form input[type="submit"] {
+	width: 30%;
+	margin: auto;
+	-webkit-transition: .5s ease-in-out;
+	-o-transition: .5s ease-in-out;
+	transition: .5s ease-in-out;
+	border-radius: 3px;
+	display: inline;
+}
+main > form input[type="submit"]:hover {
+	background: #fff;
+}
+.error, .success {
+	text-align: center;
+	margin: 1rem 0;
+	font-size: 1.2rem;
+}
+.error {
+	color: #f00;
+}
+.success {
+	color: #0f0;
+}
+/****************************************************************/
+/************************ ABOUT PAGE ****************************/
+/****************************************************************/
+.about {
+	width: 50%;
+	margin: 0 auto 1rem;
+	text-align: center;
+	font-size: 2.5rem;
+}
+.about img {
+	width: 10rem;
+	border-radius: 50%;
+	margin: 3rem auto 2rem;
+	display: block;
+	border: 3px solid #fff;
+}
+/****************************************************************/
+/************************ SEARCH PAGE ****************************/
+/****************************************************************/
+.articles > h1 {
+	grid-column: span 2;
+}
+.noresult {
+	width: 20%;
+	margin: 1rem auto;
+	background: #fff;
+	border-radius: 3px;
+	padding: .5rem 1rem;
+	text-align: center;
+	grid-column: span 2;
+}
+/****************************************************************/
+/************************** FOOTER ******************************/
+/****************************************************************/
+footer {
+	padding: 1rem;
+	font-size: 1.5rem;
+	background: #fff;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	position: absolute;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	-webkit-box-shadow: 0 -8px 11px #ccc;
+	        box-shadow: 0 -8px 11px #ccc;
+}
+/****************************************************************/
+/****************** FOOTER GO TOP BUTTON ************************/
+/****************************************************************/
+.go-top {
+	color: #fff;
+	font-size: 5rem;
+	position: fixed;
+	right: -3rem;
+	bottom: 6rem;
+	display: none;
+	cursor: pointer;
+	-webkit-transition: 2s ease-in-out;
+	-o-transition: 2s ease-in-out;
+	transition: 2s ease-in-out;
+}
+.go-top:before {
+	content: '\ea41';
+	background: #ccc;
+	border-top-left-radius: 50px;
+	border-bottom-left-radius: 50px;
+	padding: .3rem 5rem .3rem .3rem;
+}
+footer nav {
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+footer nav a {
+	padding: 0 1rem;
+}
+footer nav, footer a {
+	font-size: 2.4rem;
+	color: #000;
+	line-height: 1.5rem;
+	width: 50%;
+	text-align: center;
+	font-variant: small-caps;
+}
+footer p {
+	width: 100%;
+	text-align: center;
+	margin: 1rem 0 0;
+}
+/****************************************************************/
+/********************** PRIVACY POLICY PAGE *********************/
+/****************************************************************/
+.privacy {
+	width: 80%;
+	margin: 2rem auto 10rem;
+	font-size: 2rem;
+}
+.privacy h3 {
+	font-size: 3rem;
+}
+/****************************************************************/
+/************************* MEDIA QUERIES ************************/
+/****************************************************************/
+@media screen and (min-width: 1080px) {
+	/****************************************************************/
+	/**************************** PROGRESS **************************/
+	/****************************************************************/
+	.progress-container {
+		display: block;
+		height: 5px;
+		z-index: 100;
+		background: transparent;
+		position: fixed;
+		width: 100%;
+	}
+	/* The progress bar (scroll indicator) */
+	.progress-bar {
+		height: 5px;
+		background: #4898B2;
+		width: 0%;
+	}
+	/****************************************************************/
+	/***************************** HEADER ***************************/
+	/****************************************************************/
+	header img {
+		width: 50px;
+	}
+	/****************************************************************/
+	/***************************** NAV ******************************/
+	/****************************************************************/
+	header nav section {
+		width: 33%;
+	}
+	header nav section:nth-child(2) {
+		width: 33%;
+	}
+	header div {
+		margin: 0;
+	}
+	header nav {
+		position: relative;
+	}
+	header nav input {
+	    font-size: 1.5rem;
+	}
+	.menu > ul > li > a, .menu > ul > li {
+	    font-size: 2rem;
+    }
+	.menu a {
+		font-size: 2rem;
+	}
+	.submenu {
+		left: 2rem;
+	}
+	/****************************************************************/
+	/***************************** MAIN ******************************/
+	/****************************************************************/
+	.mainmenu {
+		padding: 0 20%;
+	}
+	article a {
+		font-size: 1rem;
+	}
+	article a:hover {
+		color: #ffcc54;
+	}	
+	/****************************************************************/
+	/**************** HOME PAGE RECENT ARTICLES PART ****************/
+	/****************************************************************/
+	.recent {
+		position: relative;
+		display: -ms-grid;
+		display: grid;
+		-ms-grid-rows: 7rem auto auto;
+		    grid-template-rows: 7rem auto auto;
+		-ms-grid-columns: (50%)[2];
+		    grid-template-columns: repeat(2, 50%);
+		width: 90%;
+		margin: 0 auto 3rem;
+		    grid-template-areas: 
+			"header header"
+			"main main"
+			"main main";
+	}
+	.recent > p {
+		-ms-grid-row: 1;
+		-ms-grid-column: 1;
+		-ms-grid-column-span: 2;
+		grid-area: header;
+	}
+	.recent img {
+		width: 100%;
+	}
+	.recent article figure {
+		max-height: initial
+	}
+	.recent article .categories {
+		display: inline-block;
+		left: .5rem;
+		top: .5rem;
+		font-size: 1.5rem;
+		line-height: initial;
+		-ms-flex-line-pack: center;
+		    align-content: center;
+		padding: .2rem .6rem;
+		border-top-left-radius: 8px;
+		border-bottom-right-radius: 8px;
+		bottom: initial;
+		margin: 0;
+	}
+	.recent article h2 {
+	    position: initial;
+	    width: initial;
+	    background: transparent;
+	    text-align: left;
+	    padding: 0;
+    }
+    .recent .shortContent .date {
+    	font-size: 1rem;
+    }
+	.shortContent {
+		height: initial;
+	}
+	/****************************************************************/
+	/**************** HOME PAGE OLDER ARTICLES PART *****************/
+	/****************************************************************/
+	.articles {
+		padding: 3rem 5rem;
+		display: -ms-grid;
+		display: grid;
+		-ms-grid-columns: (2fr)[2];
+		    grid-template-columns: repeat(2, 2fr);
+		-ms-grid-rows: auto;
+		    grid-template-rows: auto;
+		grid-column-gap: 2rem;
+		grid-row-gap: 2rem;
+	}
+	.articles article, .search article {
+		height: 16rem;
+		margin: 0;
+	}
+	.articles article:nth-child(3n+1) {
+		-ms-grid-column: 1;
+		grid-column: 1;
+		grid-row: span 2;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		    -ms-flex-direction: column;
+		        flex-direction: column;
+		height: 34rem;
+	}
+	.articles article:nth-child(3n+1) a:first-child {
+		width: 100%;
+	}
+	.articles article:nth-child(3n+1) figure {
+		width: 100%;
+		border: none;
+		max-height: inherit;
+		height: 100%;
+		border-bottom-left-radius: 0;
+		border-top-right-radius: 3px;
+	}
+	.articles article:nth-child(3n+1) img {
+		width: 100%;
+		height: initial;
+		top: -20px;
+		left: 0;
+		position: absolute;
+	}
+	.articles article:nth-child(3n+1) > div {
+		width: initial;
+		height: 40%;
+		margin: 0;
+		padding: .5rem;
+	}
+	.articles article:nth-child(6n) {
+		-ms-grid-column: 2;
+		grid-column: 2;
+	}
+	.articles article > a {
+		height: 59%;
+	}
+	.articles article .shortContent, .search article .shortContent {
+		padding: 0;
+	}
+	.articles article figure, .search article figure {
+		width: 17rem;
+		height: 16rem;
+	}
+	.articles article figure img, .search article figure img {
+		left: -5rem;
+	    right: 0;
+	    -webkit-transform: translate(0);
+	        -ms-transform: translate(0);
+	            transform: translate(0);
+	}
+	.articles article > div, .search article > div {
+		width: 100%;
+	}
+	.articles article div h2, .search article div h2 {
+		margin: 0;
+		padding: 0;
+		line-height: 2rem;
+	}
+	.return:before {
+		content: '\ea44';
+		padding-right: 0.5rem;
+		text-align: right;
+		font-size: 0.8rem;
+	}
+	.article {
+		width: 60%;
+	}
+	.article .content p, .articles .shortContent p, .search p {
+		font-size: 1.2rem;
+	}
+	.date, .categories, .tags {
+		font-size: 1rem;
+	}
+	/****************************************************************/
+	/***************** CATEGORY PAGE ARTICLES PART ******************/
+	/****************************************************************/
+	.category article {
+		width: 80%;
+		-ms-grid-columns: (49%)[2];
+		    grid-template-columns: repeat(2, 49%);
+		-ms-grid-rows: none;
+		    grid-template-rows: none;
+		border: none;
+		border-radius: 3px;
+	}
+	.category article > div {
+		height: 20rem;
+	}
+	/****************************************************************/
+	/********************** COMMENTS AND FORM ***********************/
+	/****************************************************************/
+	.comment h2:after {
+		content: '\e96f';
+		padding-left: 0.5rem;
+	}
+	.comment form {
+		width: 50%;
+	}
+	.comment input[name="name"], .comment textarea {
+		font-size: 1rem;
+	}
+	#comments article p {
+		font-size: initial;
+	}
+	/****************************************************************/
+	/******************** CONTACT PAGE AND FORM *********************/
+	/****************************************************************/
+	main > form {
+		width: 40%;
+		margin: 1rem auto;
+	}
+	main > form input, main > form textarea {
+	    font-size: 1rem;
+    	margin: 1rem auto;
+	}
+	main > form textarea {
+		margin-bottom: 0;
+	}
+	main > form > div input {
+		-webkit-transform: scale(1);
+		    -ms-transform: scale(1);
+		        transform: scale(1);
+		margin-right: initial;
+	}
+	.forminfo p {
+	    font-size: 1.5rem;
+	}
+	div label {
+		font-size: 1rem;
+	}	
+	/****************************************************************/
+	/************************ ABOUT PAGE ****************************/
+	/****************************************************************/
+	.about {
+	    font-size: 1.5rem;
+	}
+	/****************************************************************/
+	/************************ SEARCH PAGE ***************************/
+	/****************************************************************/
+	.search {
+		padding: 3rem 5rem;
+		display: -ms-grid;
+		display: grid;
+		-ms-grid-columns: (2fr)[2];
+		    grid-template-columns: repeat(2, 2fr);
+		-ms-grid-rows: auto;
+		    grid-template-rows: auto;
+		grid-column-gap: 2rem;
+		grid-row-gap: 2rem;
+	}
+	.search h1 {
+		grid-column: span 2;
+	}
+	/****************************************************************/
+	/************************** FOOTER ******************************/
+	/****************************************************************/
+	footer {
+		font-size: 1.5rem;
+	}
+	footer nav, footer a {
+	    font-size: 1.9rem;
+	}
+
+	footer p {
+		font-size: 1.2rem;
+	}
+	.go-top {
+		font-size: 3rem;
+		right: -4rem;
+		bottom: 6rem;
+		-webkit-transition: .3s ease-in-out;
+		-o-transition: .3s ease-in-out;
+		transition: .3s ease-in-out;
+	}
+	.go-top:hover {
+		right: -3rem;
+	}
+	/****************************************************************/
+	/********************** PRIVACY POLICY PAGE *********************/
+	/****************************************************************/
+	.privacy {
+		font-size: initial;
+	}
+	.privacy h3 {
+		font-size: initial;
+	}
+}

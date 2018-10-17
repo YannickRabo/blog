@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<head>
+    <meta charset="utf-8">
+    <title>Blog - Home</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+    <script>tinymce.init({ selector:'textarea' });</script>
+    <link href="https://fonts.googleapis.com/css?family=Overlock" rel="stylesheet"> 
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/styleAdmin.css">
+</head>
+<body>
+    <header>
+        <a href="../index.php" target="_blank">Go to Blog</a>
+        <h1>Welcome to your admin tool</h1>
+        <a href="deconnexion.php" onclick="return logout();">Logout</a>
+    </header>
+    <main class="main">
+        <section>
+            <nav>
+                <a href="admin.php">Home</a>
+                <a href="add.php">New article</a>
+                <a href="users.php">Users</a>
+                <a href="newUser.php">New user</a>
+                <a href="categories.php">Categories</a>
+                <a href="new_category.php">New category</a>
+            </nav>
+        </section>
+        <section>
+            <h2><span></span> Articles</h2>
+            <input type="text" name="typeahead" placeholder="Search ..." class="recherche">
+            <table class="standard-table">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Subtitle</th>
+                        <th>Publication</th>
+                        <th>Edition</th>
+                        <th class="contenu">Content</th>
+                        <th>Keywords</th>
+                        <th>Status</th>
+                        <th>Images</th>
+                        <th>Category</th>
+                        <th class="edit"></th>
+                        <th class="editcomm"></th>
+                        <th class="delete"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach($results as $result): ?>
+                        <tr>
+                            <td><?= $result['titreArticle'] ?></td>
+                            <td><?= $result['subtitle'] ?></td>
+                            <td><?= $result['datePublication'] ?></td>
+                            <td><?= $result['dateEdition'] ?></td>
+                            <td><?= mb_strimwidth($result['contenu'],0,100,'...') ?></td>
+                            <td><?= $result['motsClefs'] ?></td>
+                            <td class="status"><?= ($result['statut'] ==0 )? '<span class="icon-unchecked"></span>' : '<span class="icon-checked"></span>'; ?></td>
+                            <td><?= $result['imgUne'] ?></td>
+                            <td><?= $result['titreCategorie'] ?></td>
+                            <td class="icon"><a href="edit.php?idArticles=<?=$result['idArticles']?>" class="tdedit"></a></td>
+                            <td class="icon"><a href="comments.php?idArticles=<?=$result['idArticles']?>" class="tdeditcomm"></a></td>
+                            <td class="icon"><a href="del.php?delArticle=<?=$result['idArticles']?>" onclick="return deleteart();" class="tddelete"></a></td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </section>
+        </main>
+    <footer>
+
+    </footer>
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>

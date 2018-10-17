@@ -1,0 +1,30 @@
+	<main class="category">
+        <h1><?= $result[0]["titreCategorie"] ?></h1>
+        <?php foreach($result as $index=>$results): ?>
+            <article>
+                <a href="/articles/<?=$results['idArticles']?>/<?=(str_replace(' ', '-', strtolower($results['titre'])))?>">
+                     <figure>
+                        <?php if(empty($results['imgUne'])) { ?>
+                            <img src="admin/uploads/noimage.jpg" alt="no image">
+                        <?php } else { ?>
+                            <img src="admin/uploads/<?= $results['imgUne']; ?>" alt="<?= $results['imgUne']; ?>">
+                        <?php } ?>
+                    </figure>
+                </a>
+                <div>
+                    <a href="/articles/<?=$results['idArticles']?>/<?=(str_replace(' ', '-', strtolower($results['titre'])))?>">
+                        <h2><?= $results['titre'] ?></h2>
+                    </a>
+                    <?php if(empty($results['subtitle'])) { ?>
+                        
+                    <?php } else { ?>
+                        <h3><?= $results['subtitle'] ?></h3>
+                    <?php } ?>
+                    <?= mb_strimwidth($results['contenu'],0,130,'...') ?>
+                    <p class="date"><?= $results['userName']; ?> | <?= $results['datePub'] ?></p>
+                    <a href="/articles/<?=$results['idArticles']?>/<?=(str_replace(' ', '-', strtolower($results['titre']))).'/#comments'?>" class="comments"><?= $comments[$index]['totalComm']; ?></a>
+                </div>
+            </article>
+        <?php endforeach ?>
+	</main>
+	

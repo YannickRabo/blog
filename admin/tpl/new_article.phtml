@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Blog - New Article</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+    <script>tinymce.init({ selector:'textarea' });</script>
+    <link href="https://fonts.googleapis.com/css?family=Overlock" rel="stylesheet"> 
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/styleAdmin.css">
+</head>
+<body>
+    <header>
+        <a href="../index.php" target="_blank">Go to Blog</a>
+        <h1>Welcome to your admin tool</h1>
+        <a href="deconnexion.php" onclick="return logout();">Logout</a>
+    </header>
+    <main class="main">
+        <section>
+            <nav>
+                <a href="admin.php">Home</a>
+                <a href="add.php">New article</a>
+                <a href="users.php">Users</a>
+                <a href="newUser.php">New user</a>
+                <a href="categories.php">Categories</a>
+                <a href="new_category.php">New category</a>
+            </nav>
+        </section>
+        <section>
+            <h2>New article</h2>
+            <p><?=$erreur?></p>
+            <form action="add.php" method="POST" enctype="multipart/form-data">
+                <ul>
+                    <li>
+                        <label>Title</label>
+                        <input type="text" name="titre" id="title" value="">
+                    </li>
+                    <li>
+                        <label>Subtitle</label>
+                        <input type="text" name="subtitle">
+                    </li>
+                    <li>
+                        <label>Publication date</label>
+                        <input type="date" name="publication" value="<?= date('Y-m-d'); ?>">
+                    </li>
+                    <li>
+                        <label for="edition">Edit date :</label>
+                        <input type="date" name="edition" value="<?= date('Y-m-d'); ?>">
+                    </li>
+                    <li>
+                        <label>Content</label>
+                    </li>
+                    <li>
+                        <textarea name="contenu" rows="9" class="content"></textarea>
+                    </li>
+                    <li>
+                        <label>Keywords</label>
+                        <input type="text" name="clefs">
+                    </li>
+                    <li>
+                        <label>Status</label>
+                        <input type="checkbox" name="statut">
+                    </li>
+                    <li>
+                        <label for="imgUne">Images</label>
+                        <input type="file" name="imgUne" id="imgUne">
+                    </li>
+                    <li>
+                        <label>Category</label>
+                        <select class="category" name="categorie">
+                        <?php foreach($category as $index=>$categories): ?>
+                            <option value="<?= $categories['idCategories'] ?>"><?= $categories['titre'] ?></option>
+                        <?php endforeach ?>
+                        </select>
+                    </li>
+                    <li class="secondCat">
+                        <label>Subcategory</label>
+                        <select id="sub">
+                            <option value="">Please select...</option>
+                            <option value="1">Review</option>
+                            <option value="2">Test</option>
+                        </select>
+                    </li>
+                </ul>
+                <input type="submit" name="submit" value="Publish">
+            </form>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>

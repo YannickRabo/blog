@@ -1,0 +1,35 @@
+	<main>
+		<article class="forminfo">
+			<p>If you would like to submit ideas, write or submit articles, or just get in touch with me.</p>
+			<p>Leave a message and I'll get back to you as soon as possible.</p>
+		</article>
+		<form action="<?= htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="POST">
+			<input type="text" name="firstname" placeholder="First name" value="<?php 
+					if(isset($_SESSION['firstname'])) {
+						echo $_SESSION['firstname'];
+					}; ?>">
+
+			<input type="text" name="lastname" placeholder="Last name" value="<?php 
+					if(isset($_SESSION['lastname'])) {
+						echo $_SESSION['lastname'];
+					}; ?>">
+
+			<input type="text" name="email" placeholder="Email" value="<?php 
+					if(isset($_SESSION['email'])) {
+						echo $_SESSION['email'];
+					}; ?>">
+			<textarea name="message" placeholder="Your message"></textarea>
+			<div>
+				<input type="checkbox" name="checkbox">
+				<label for="checkbox">Send copy</label>
+			</div>
+			<input type="submit" name="submit" value="Send message">
+
+			<?php if(isset($erreur)) {
+				echo '<p class="error">'.$erreur."</p>";
+			} ?>
+			<?php if(isset($success)) {
+				echo '<p class="success">'.$success."</p>";
+			} ?>
+		</form>
+	</main>

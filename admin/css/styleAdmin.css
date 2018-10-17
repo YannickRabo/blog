@@ -1,0 +1,238 @@
+﻿@font-face {
+    font-family: icomoon;
+    src: url(../font/icomoon.ttf);
+}
+.icomoon {
+/*Better font rendering ======*/
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+.mce-notification, .mce-statusbar {
+    display: none;
+}
+.mce-tinymce .mce-container .mce-panel {
+	resize: vertical;
+}
+#mceu_27, #mceu_58 {
+	display: none;
+}
+body {
+	font-family: 'Overlock', cursive;
+	font-size: 62.5%;
+	overflow: hidden;
+	min-height: 100vh;
+	display: grid;
+	grid-template-columns: 15% 70% 15%;
+	grid-template-rows: 11vh 89vh;
+}
+a {
+	text-decoration: none;
+	outline: 0;
+}
+header {
+	background: #479ACA;
+	padding: 0 2rem;
+	grid-column: 1/4;
+	grid-row-start: 1;
+	display: grid;
+	grid-template-columns: 15% 70% 15%;
+	align-items: center;
+}
+header a, header h1{
+	grid-column: 1;
+	font-size: 2rem;
+	color: white;
+	margin: 0;
+	font-variant: small-caps;
+}
+header a:before {
+	content: '\e900';
+	font-family: icomoon;
+	padding-right: 0.5rem;
+}
+header h1 {
+	grid-column: 2;
+	display: inline;
+	text-align: center;
+}
+header a:last-child {
+	grid-column: 3;
+	display: inline;
+	text-align: right;
+}
+header a:last-child:before {
+	content: '\ea14';
+}
+main nav {
+	margin-top: 2rem;
+}
+main {
+	font-size: 1rem;
+	background: white;
+	grid-column: 1/4;
+	grid-row: 2;
+	display: grid;
+	grid-template-columns: 10% 90%;
+}
+main nav a {
+	color: white;
+	font-size: 1.5rem;
+	display: block;
+	line-height: 3rem;
+}
+main nav a:before {
+	font-family: icomoon;
+	padding-right: 5%;
+}
+main nav a:first-child:before {
+	content: '\e920';
+}
+main nav a:nth-child(2):before {
+	content: '\e926';
+}
+main nav a:nth-child(3):before {
+	content: '\e972';
+}
+main nav a:nth-child(4):before {
+	content: '\e973';
+}
+main nav a:nth-child(5):before {
+	content: '\e9bb';
+}
+main nav a:last-child:before {
+	content: '\e931';
+}
+.main section:first-child {
+	background: #479ACA;
+	padding: 1rem;
+	font-size: 1.2rem;
+	grid-column-start: 1;
+}
+.main section:last-child {
+	padding: 1rem;
+	overflow-y: scroll;
+}
+#contenu_ifr {
+    height: 15rem;
+}
+div {
+	margin: 5% 0;
+	text-align: center;
+	width: 100%;
+}
+div span {
+	font-size: 4rem;
+	font-family: 'Overlock', cursive;
+}
+.recherche {
+	display: inline-block;
+	width: 96%;
+	margin-bottom: 0.5rem;
+	border: 1px solid black;
+	padding: 0.5rem;
+	border-radius: 5px;
+	font-style: italic;
+	font-weight: bold;
+	background-color: lightgrey;
+}
+th {
+	text-align: left;
+	vertical-align: text-top;
+	width: 10rem;
+	text-transform: uppercase;
+}
+td {
+	vertical-align: text-top;
+	padding: 0.1rem;
+}
+main .standard-table {
+	height: 10px;
+}
+.contenu {
+	width: 20%;
+}
+.status span {
+	margin: 0 1rem;
+}
+.icon-checked:before, .icon-unchecked:before {
+	font-family: icomoon;
+	content: '\ea52';
+}
+.icon-unchecked:before {
+	content: '\ea53';
+}
+i {
+	display: block;
+	margin: 0 2%;
+}
+.edit, .delete, .editcomm, .icon {
+	text-align: center;
+	width: 1rem;
+	padding: 0 0.5rem;
+}
+.edit:before, .tdedit:before {
+	font-family: icomoon;
+	content: '\e906';
+}
+.editcomm:before, .tdeditcomm:before {
+	font-family: icomoon;
+	content: '\e96f';
+}
+.delete:before, .tddelete:before {
+	font-family: icomoon;
+	content: '\ea0f';
+}
+.tdedit:before, .tdeditcomm:before {
+	color: green;
+}
+.tddelete:before {
+	color: red;
+}
+ul {
+	padding: 0;
+}
+ul li {
+	list-style-type: none;
+	margin-bottom: 0.3rem;
+}
+.secondCat {
+  display: none;
+}
+
+.secondCat.show {
+  display: block;
+}
+
+input[type="submit"] {
+	margin-bottom: 2rem;
+}
+label {
+	font-weight: bold;
+	width: 10rem;
+	display: inline-block;
+}
+textarea {
+	resize: vertical;
+}
+.comments:nth-child(odd) {
+	background-color: #FFF;
+}
+.comments:nth-child(even) {
+	background-color: #CCC;
+}
+.pseudo {
+	width: 10rem;
+	font-weight: bold;
+}
+.texte {
+	width: 30rem;
+}
+@media screen and (min-width: 1000px) {
+	main {
+		grid-template-columns: 15% 85%;
+	}
+	body {
+		grid-template-rows: 11vh 89vh;
+	}
+}
+
